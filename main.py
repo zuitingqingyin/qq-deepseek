@@ -34,7 +34,6 @@ async def root(request: Request):
     user_id = data['user_id']
     group_id = data['group_id']
     self_id = data['self_id']
-    print(self_id)
     for value in data['message']:
         print(value)
         if value['type']=='at':

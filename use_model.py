@@ -20,7 +20,7 @@ def hide_think(response)->str:
     response=re.sub(r"<think>\n.*\n</think>","",response,flags=re.DOTALL)
     return response
 
-# 使用模型
+# 使用模型短对话
 def use_model(host,port,model,prompt,data,temperature)->str:
      
     messages = [
@@ -38,6 +38,13 @@ def use_model(host,port,model,prompt,data,temperature)->str:
     res = r.invoke({"input":""},temperature=temperature)
 	
     return hide_think(res)
+
+# 使用模型长对话
+def use_model_long(host,port,model,prompt,data,temperature)->str:
+    
+    pass
+
+
 
 
 #数据预处理
