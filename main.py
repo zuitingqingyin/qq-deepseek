@@ -7,6 +7,7 @@ import requests
 
 app = FastAPI()
 
+
 #调用模型后回复消息
 def reply_message(message,group_id,user_id):
     requests.post('http://localhost:3000/send_group_msg',json={
@@ -41,7 +42,7 @@ async def root(request: Request):
             if value['data']['qq']==str(self_id):
                 print("收到艾特我的消息,开始处理")
                 
-                output = use_model.use_model_interface(data['message'])
+                output = use_model.use_model_interface(data['message'],user_id)
                 print(output)
                 reply_message(output,group_id,user_id)
                 break
