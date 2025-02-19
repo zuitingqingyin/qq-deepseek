@@ -10,7 +10,7 @@ app = FastAPI()
 
 #调用模型后回复消息
 def reply_message(message,group_id,user_id):
-    requests.post('http://localhost:3000/send_group_msg',json={
+    res = requests.post('http://localhost:3000/send_group_msg',json={
         "group_id": group_id,
         "message":[
             
@@ -27,6 +27,8 @@ def reply_message(message,group_id,user_id):
             ]
         }
     )
+    print(res.content)
+    
     
 
 @app.post("/")

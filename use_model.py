@@ -73,12 +73,16 @@ def preprocess(data)->str:
             result+=value["data"]['text']
     return result
 
+def getlen(history):
+    print(history.messages)
+    return len(history.messages)
+
 
 
 #对外提供的接口
 def use_model_interface(input,user_id)->str:
     if user_id in store:
-        if store[user_id]._len_()>20:
+        if getlen(store[user_id])>20:
             store[user_id].clear()
             return "对话太长了，请重新开始"
     config = get_config()
