@@ -28,8 +28,7 @@ def reply_message(message,group_id,user_id):
         }
     )
     print(res.content)
-    
-    
+
 
 @app.post("/")
 async def root(request: Request):

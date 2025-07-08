@@ -5,7 +5,7 @@
 ## 功能特性
 
 - **QQ 消息接收与发送**：通过 LLOneBot 实现 QQ 消息的接收与发送。
-- **DeepSeek 接入**：将用户发送的消息转发至 Ollama本地模型deepseek-r1，并获取响应返回给用户。
+- **DeepSeek 接入**：将用户发送的消息转发至 deepseek api，并获取响应返回给用户。
 - **简单易用**：只需配置好相关参数，即可快速上手使用。
 
 ## 环境要求
@@ -29,20 +29,14 @@
    pip install -r requirements.txt
    ```
 
-3.**安装Ollama并配置模型**
-  前往官网下载[Ollama](https://ollama.com/)
 
-  打开命令行
-  ```bash
-  ollama run deepseek-r1:7b//根据你的需求
-  ```
 
-4. **配置 LLOneBot**
+3. **配置 LLOneBot**
 
    在 `config.json` 中配置 请求Ollama 的相关参数：
 ```json
   {
-    "model":"deepseek-r1:8b",
+    "model":"deepseek-chat",
     "host":"localhost",
     "port":11434,
     "temperature":0.7,
