@@ -5,7 +5,6 @@ import langchain_community
 from langchain_ollama import OllamaLLM as Ollama
 from langchain_core.output_parsers import StrOutputParser
 from langchain.prompts import ChatPromptTemplate
-from langchain.schema import SystemMessage, HumanMessage, AIMessage
 import re
 from langchain_core.runnables.history import RunnableWithMessageHistory
 from langchain_community.chat_message_histories import ChatMessageHistory
